@@ -2,15 +2,17 @@
 /* @var $this \yii\web\View  */
 /* @var $content string */
 
-use app\widgets\Alert;
 use yii\helpers\Html;
-use yii\bootstrap\Nav;
-use yii\bootstrap\NavBar;
-use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
+use kartik\icons\Icon;
 
 AppAsset::register($this);
+//kartik icon package - initialize the globally setup framework
+Icon::map($this, Icon::FA);
 ?>
+
+//
+
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
@@ -23,48 +25,92 @@ AppAsset::register($this);
         <?php $this->head() ?>
     </head>
     <body>
+
+
         <?php $this->beginBody() ?>
 
-        <div class="wrap">
-            <?php
-            NavBar::begin([
-                'brandLabel' => Yii::$app->name,
-                'brandUrl' => Yii::$app->homeUrl,
-                'options' => [
-                    'class' => 'navbar-inverse navbar-fixed-top',
-                ],
-            ]);
-            echo Nav::widget([
-                'options' => ['class' => 'navbar-nav navbar-right'],
-                'items' => [
-                    ['label' => 'Home', 'url' => ['/site/index']],
-                    ['label' => 'About', 'url' => ['/site/about']],
-                    ['label' => 'Contact', 'url' => ['/site/contact']],
-                    Yii::$app->user->isGuest ? (
-                            ['label' => 'Login', 'url' => ['/site/login']]
-                            ) : (
-                            '<li>'
-                            . Html::beginForm(['/site/logout'], 'post')
-                            . Html::submitButton(
-                                    'Logout (' . Yii::$app->user->identity->username . ')', ['class' => 'btn btn-link logout']
-                            )
-                            . Html::endForm()
-                            . '</li>'
-                            )
-                ],
-            ]);
-            NavBar::end();
-            ?>
+        <div id="u-app-wrapper" class="panel-fixed ">
 
-            <div class="container">
-                <?=
-                Breadcrumbs::widget([
-                    'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-                ])
-                ?>
-                <?= Alert::widget() ?>
-                <?= $content ?>
+            <!-- TOB BAR -->
+            <div id="u-topbar" style="z-index: 200;"> <!-- zindex to make sure is always in front of anything else, left menu included ! -->
+
+                <!-- HOME BUTTON -TITLE  -->
+                <div class="title"> 
+                    <a href=<?= Yii::$app->homeUrl; ?>>
+                        <?= Html::img('img/icons/doctor.png', ['alt' => 'Home', 'height' => 20, 'width' => 22, 'style' => 'margin-right: 10px'])
+                        ?> 
+                    </a>
+                    <span class="title-company"> Dr. Hugo   </span>
+                </div>
+
+
+                <!-- TOP NAVIGATION PANEL -->
+                <div class ="navbar-topbar" >    
+
+                    <span class="left-panel-toggle">
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <?php
+                    if (isset($this->blocks['topbar'])) { //this is why topbar is always included in the left-navbar :-)))
+                        echo $this->blocks['topbar'];
+                    }
+                    ?>
+                </div>
+
             </div>
+
+            <!-- LEFT NAVIGATION PANEL -->
+            <div id="u-left-panel" style="z-index: 100;" > <!-- zindex to make sure is always in front of anything else, but behind the top bar ! -->
+
+                <br/>
+
+                <div id="u-left-menu">
+                    <ul class="left-menu-wrapper list-unstyled">
+
+
+                        <li class="left-menu-parent">
+                            <a href="javascript:void(0);">
+                                <span class="left-menu-link-icon">
+                                    <i class="fa fa-user"></i>
+                                </span>
+                                <span class="left-menu-link-info">
+                                    <span class="link-name">PAZIENTI</span>
+                                    <span class="link-state"></span>
+                                </span>
+                            </a>
+                        </li>
+                        
+                        <li class="left-menu-parent">
+                            <a href="javascript:void(0);">
+                                <span class="left-menu-link-icon">
+                                    <i class="fa fa-file"></i>
+                                </span>
+                                <span class="left-menu-link-info">
+                                    <span class="link-name">RICETTE</span>
+                                    <span class="link-state"></span>
+                                </span>
+                            </a>
+                        </li>
+                        
+
+                    </ul><!--Main ul-->
+                </div>
+
+            </div>
+
+
+            <!-- MAIN CONTENT - injected through render view -->
+            <div class="content-wrapper">
+                <div class="content-panel content-shrink">
+
+                    <section id="main-content"> 
+                        <?= $content ?>
+                    </section>
+
+
+                </div>
+            </div>
+
         </div>
 
         <footer class="footer">
