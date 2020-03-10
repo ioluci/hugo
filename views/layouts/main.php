@@ -50,8 +50,9 @@ Icon::map($this, Icon::FA);
                     <span class="left-panel-toggle">
                         <i class="fa fa-bars"></i>
                     </span>
+
                     <?php
-                    if (isset($this->blocks['topbar'])) { //this is why topbar is always included in the left-navbar :-)))
+                    if (isset($this->blocks['topbar'])) {
                         echo $this->blocks['topbar'];
                     }
                     ?>
@@ -69,7 +70,7 @@ Icon::map($this, Icon::FA);
 
 
                         <li class="left-menu-parent">
-                            <a href="javascript:void(0);">
+                            <a href="?r=paziente/index">
                                 <span class="left-menu-link-icon">
                                     <i class="fa fa-user"></i>
                                 </span>
@@ -79,19 +80,19 @@ Icon::map($this, Icon::FA);
                                 </span>
                             </a>
                         </li>
-                        
+
                         <li class="left-menu-parent">
-                            <a href="javascript:void(0);">
+                            <a href="?r=ricevuta/index">
                                 <span class="left-menu-link-icon">
                                     <i class="fa fa-file"></i>
                                 </span>
                                 <span class="left-menu-link-info">
-                                    <span class="link-name">RICETTE</span>
+                                    <span class="link-name">RICEVUTE</span>
                                     <span class="link-state"></span>
                                 </span>
                             </a>
                         </li>
-                        
+
 
                     </ul><!--Main ul-->
                 </div>

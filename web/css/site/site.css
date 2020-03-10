@@ -113,3 +113,23 @@ a.desc:after {
 .nav > li > form > button.logout:focus {
     outline: none;
 }
+
+
+/* TOPBAR NAVIGATION BAR*/
+.navbar-topbar {
+    display: inline; 
+}
+
+.navbar-topbar .nav {
+    display: inline-flex; 
+    vertical-align: top; 
+    margin-top: 12px; 
+    padding-left: 20px;
+}
+
+/* parent items, visibile in toolbar*/
+.navbar-topbar a:hover {
+    /*border: 1px solid !important;*/
+    border-radius: 8px !important;
+    background-color: #eee !important;     
+}
