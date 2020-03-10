@@ -1,3 +1,15 @@
+INSTALLAZIONE
+-------------
+
+1. Scaricare l'archivio Zip del progetto (pulsante verde Clone or download, poi Download Zip)
+2. Scompattare il contentuo dell'archivio nella cartella C:/wamp64/www/hugo
+3. Avviare un'applicazione terminal CLI ( tipo PowerShell)
+4. Dall'interno della cartella wamp64/www/hugo avviare il commando: composer (ci metterà un pò per scaricare tutti i pacchetti necessari per l'applicazione)
+5. Scaricare da questo link il pacchetto di icons FontAwesome: https://fontawesome.com/v4.7.0/get-started/
+6. Scompattare il contenuto del pacchetto delle icone in una nuova cartella, C:/wamp64/www/hugovendor/font-awesome.4.7.0  
+
+--------------
+
 <p align="center">
     <a href="https://github.com/yiisoft" target="_blank">
         <img src="https://avatars0.githubusercontent.com/u/993323" height="100px">
