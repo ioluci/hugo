@@ -1,10 +1,61 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 10-mar-2020, 11.42.55
-    Author     : ioluci
-*/
+.content-panel {
+    top: 40px;
+}
 
+
+/*table.dataTable ==================================================================================================*/
+table.dataTable.display tbody tr:hover {
+    background-color: #FFDB94 !important;
+    color: #000;
+}
+table.dataTable.display tbody tr:hover > .sorting_1, table.dataTable.order-column.hover tbody tr:hover > .sorting_1 {
+    background-color: #FFDB94 !important;
+}
+table.dataTable.display tbody tr:hover > .sorting_2, table.dataTable.order-column.hover tbody tr:hover > .sorting_2 {
+    background-color: #FFDB94 !important;}
+
+table.dataTable.display tbody tr:hover > .sorting_3, table.dataTable.order-column.hover tbody tr:hover > .sorting_3 {
+    background-color: #FFDB94 !important;
+}
+
+thead{
+    background-color: #c3c3c3;
+    color : #454b56; 
+    font-size: 0.9em; 
+    font-family: 'Droid Sans', sans-serif;
+}
+
+table.dataTable thead th, table.dataTable thead td {
+    padding: 0px 18px;
+    border-bottom: none !important;
+    /*color: #4078a5 !important;*/
+    border-right: 1px #aaa solid ;
+    font-weight: normal;
+}
+
+table.dataTable.compact thead th, table.dataTable.compact thead td {
+    padding: 1px 17px 1px 4px !important;
+}
+
+/*cells with content*/
+table.dataTable.display > tbody > tr > td{
+    padding: 2px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    border-top: 1px solid #cce0ff;
+    font-family: 'Droid Sans', sans-serif;
+    font-size: 0.85em;
+    color: #000 ;
+    overflow-wrap:normal;
+    white-space: normal;
+}
+
+/*Filter input: red*/
+table input {
+    color: red !important;
+}
+
+table .index-column {
+    color: #7e8798 !important;
+    font-size: 0.7em !important;
+}

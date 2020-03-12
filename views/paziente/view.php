@@ -24,7 +24,7 @@ echo NavX::widget([
 ]);
 $this->endBlock(); // ************************************************************
 ?>
-<h1>paziente/view</h1>
+<h1>Paziente: <?= $paziente->cognome_paz . ' ' . $paziente->nome_paz ?></h1>
 
 <p>
     You may change the content of this page by modifying

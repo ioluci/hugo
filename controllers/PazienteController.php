@@ -2,16 +2,36 @@
 
 namespace app\controllers;
 
-class PazienteController extends \yii\web\Controller
-{
-    public function actionIndex()
-    {
+use Yii;
+use yii\web\Controller;
+use yii\helpers\Json;
+use app\models\Paziente;
+use app\helpers\PazienteHelper;
+
+class PazienteController extends Controller {
+
+    public function actionIndex() {
         return $this->render('index');
     }
-    
-    public function actionView()
-    {
-        return $this->render('view');
+
+    public function actionView($id = null) {
+
+        $paziente = Paziente::find()
+                ->where(['id_paz' => $id])
+                ->one();
+
+        return $this->render('view', [
+                    'paziente' => $paziente
+        ]);
+    }
+
+    public function actionIndexData() {
+
+        $request = Yii::$app->request;
+
+        $dataPazienti = PazienteHelper::getIndexData();
+
+        return Json::encode($dataPazienti);
     }
 
 }

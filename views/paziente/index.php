@@ -22,14 +22,36 @@ echo NavX::widget([
 $this->endBlock(); // ************************************************************
 ?>
 
+<div class="panel panel-default">                
 
+    <div class="panel-heading"> 
+        Elenco pazienti
+    </div>	
 
-<h1>paziente/index</h1>
+    <div class="panel-body">  
 
-<button type="button" class="btn btn-light"> <a href="?r=paziente/view"> Tabella -> dettagli paziente </a></button>
-<hr>
+        <table id="table-paziente-index" class="display compact" cellspacing="0" width="100%">
+            <thead>
+                <tr>                    
+                    <th>#</th>                          
+                    <th>Paziente</th>      
+                    <th>C. Fiscale</th>
+                    <th>Comune Residenza</th>
+                    <th rowspan="2">Provincia</th>
+                    <th rowspan="2">Telefono</th>
+                    <th rowspan="2">Medico</th>
+                    <th rowspan="2">Email</th>  
+                </tr>
+                <tr id="filterrow">  
+                    <th></th>
+                    <th></th>    
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>                        
+            <tbody>                            
+            </tbody> 
 
-<p>
-    You may change the content of this page by modifying
-    the file <code><?= __FILE__; ?></code>.
-</p>
+        </table>
+    </div>
+</div>
