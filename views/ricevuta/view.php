@@ -34,7 +34,9 @@ $this->endBlock(); // **********************************************************
 ?>
 <h1>ricevuta/view</h1>
 
-<p>
-    You may change the content of this page by modifying
-    the file <code><?= __FILE__; ?></code>.
-</p>
+
+<div id="app"> 
+    <p>{{ message }}</p>
+    <todo task="clean the room"></todo>
+</div>
+

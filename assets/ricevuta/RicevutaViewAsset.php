@@ -12,7 +12,8 @@ class RicevutaViewAsset extends AssetBundle {
         'css/site/ricevuta/view.css'
     ];
     public $js = [
-        'js/site/ricevuta/view.js'
+        'js/site/ricevuta/view.js',
+        'js/vue/vue.js'
     ];
     public $depends = [
         'app\assets\AppAsset', //= site.css + site.js    
