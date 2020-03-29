@@ -35,8 +35,6 @@ $this->endBlock(); // **********************************************************
 <h1>ricevuta/view</h1>
 
 
-<div id="app"> 
-    <p>{{ message }}</p>
-    <todo task="clean the room"></todo>
+<div id="app">    
 </div>
 
