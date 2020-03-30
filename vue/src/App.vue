@@ -1,8 +1,6 @@
 <template>
       <div id="app">
-            <HelloWorld
-                  msg="Welcome to Ricevuta - Your Vue.js imbedded project"
-            />
+            <HelloWorld msg="Welcome to Your Vue.js App" />
       </div>
 </template>
 

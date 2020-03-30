@@ -1,3 +1,4 @@
+
 module.exports = {
     // options...
     //https://cli.vuejs.org/config/#vue-config-js
@@ -17,8 +18,8 @@ module.exports = {
         //If the value is an Object, it will be merged into the final config using webpack-merge
         devtool: "source-map",
         output: {
-            filename: "js/vue_app.min.js",
-            chunkFilename: "js/vendors_app.min.js"
+            filename: "js/vue_app.js",
+            chunkFilename: "js/vue_vendors.js"
         }
     },
 
@@ -28,12 +29,19 @@ module.exports = {
             extractCSSPlugin &&
                 extractCSSPlugin.tap(() => [
                     {
-                        filename: "css/vue_styles.min.css",
-                        chunkFilename: "css/vendors_styles.min.css"
+                        filename: "css/vue_styles.css",
+                        chunkFilename: "css/vendors_styles.css"
                     }
                 ]);
         }
     },
 
-    pluginOptions: {}
+    pluginOptions: {
+        quasar: {
+            importStrategy: "kebab",
+            rtlSupport: false
+        }
+    },
+
+    transpileDependencies: ["quasar"]
 };

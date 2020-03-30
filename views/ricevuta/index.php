@@ -19,14 +19,12 @@ echo NavX::widget([
     'encodeLabels' => false
 ]);
 $this->endBlock(); // ************************************************************
-
 ?>
 <h1>ricevuta/index</h1>
 
 <button type="button" class="btn btn-light"> <a href="?r=ricevuta/view"> Tabella -> dettagli ricevuta </a></button>
 <hr>
 
-<p>
-    You may change the content of this page by modifying
-    the file <code><?= __FILE__; ?></code>.
-</p>
+<!--Vuejs app-->
+<div id="app">    
+</div>
